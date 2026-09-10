@@ -73,10 +73,11 @@ export default function TeamInfo() {
       <DataTable>
         <DataTable.Header>
           <DataTable.Title><Text bold>Employee</Text></DataTable.Title>
-          <DataTable.Title><Text bold>Role</Text></DataTable.Title>
+          
           <DataTable.Title><Text bold>Group</Text></DataTable.Title>
           <DataTable.Title><Text bold>Status</Text></DataTable.Title>
           <DataTable.Title><Text bold>Actions</Text></DataTable.Title>
+          <DataTable.Title><Text bold>No.</Text></DataTable.Title>
         </DataTable.Header>
 
         {employees.map((emp, idx) => (
@@ -84,8 +85,8 @@ export default function TeamInfo() {
             key={idx}
             style={{ backgroundColor: idx % 2 === 0 ? "#F0FFF0" : "#ffffff" }}
           >
-            <DataTable.Cell>{emp.name}</DataTable.Cell>
-            <DataTable.Cell>{emp.roles}</DataTable.Cell>
+            <DataTable.Cell textStyle={emp.active===0?{ color: 'gray' }:undefined} >{emp.name}</DataTable.Cell>
+            
             <DataTable.Cell>{emp.groupName}</DataTable.Cell>
             <DataTable.Cell>{emp.active ? "Active" : "Inactive"}</DataTable.Cell>
             <DataTable.Cell>
@@ -107,6 +108,7 @@ export default function TeamInfo() {
                 },
               ]} />
             </DataTable.Cell>
+            <DataTable.Cell>{emp.phoneNumber}</DataTable.Cell>
           </DataTable.Row>
         ))}
       </DataTable>

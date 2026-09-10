@@ -20,7 +20,7 @@ const RowActionsMenu : React.FC<RowActionsMenuProps> = ({ employee, actions }) =
       placement="bottom right"
       trigger={({ ...triggerProps }) => (
         <Button {...triggerProps} size="sm" variant="link" action="negative">
-          <Text style={{ color: "#FA8072" }}>More actions</Text>
+          <Text style={{ color: "#FA8072" }}>more</Text>
         </Button>
       )}
     >
